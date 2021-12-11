@@ -3,12 +3,14 @@ plugins {
     id 'kotlin-android'
     id 'maven-publish'
 }
+group='kg.beeline.calendarView'
+version = '1.0.4'
+
 
 android {
     compileSdkVersion rootProject.compileSdkVersion
     buildToolsVersion rootProject.buildToolsVersion
-    group = 'com.github.jitpack'
-    version = '1.0.2'
+
 
     defaultConfig {
         minSdkVersion rootProject.minSdkVersion
@@ -53,4 +55,18 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-common-java8:$rootProject.lifecycleKtxVer"
 
     implementation "com.github.kizitonwose:CalendarView:$rootProject.calendarViewVer"
+}
+
+afterEvaluate {
+    publishing {
+        publications {
+            // Creates a Maven publication called "release".
+            release(MavenPublication) {
+                from components.release
+                groupId = 'kg.beeline'
+                artifactId = 'calendarView'
+                version = '1.0.4'
+            }
+        }
+    }
 }
