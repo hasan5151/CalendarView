@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="anim_long">700</integer>
+    <integer name="anim_short">400</integer>
+    <integer name="anim_fast">200</integer>
+</resources>

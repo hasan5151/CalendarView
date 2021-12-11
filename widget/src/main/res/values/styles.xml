@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="PeriodRadioButton" parent="Widget.MaterialComponents.CompoundButton.RadioButton">
+        <item name="paddingStart">@dimen/spacing_small</item>
+        <item name="android:textColor">@color/textColorPrimary</item>
+        <item name="android:foreground">@drawable/fg_ripple_rounded</item>
+    </style>
+
+    <style name="Calendar.WeekDay" parent="">
+        <item name="android:textSize">@dimen/text_size_h5</item>
+        <item name="android:textColor">@color/textColorPrimary</item>
+        <item name="android:textAlignment">gravity</item>
+        <item name="android:gravity">center</item>
+        <item name="layout_constraintWidth_percent">0.12</item>
+        <item name="android:maxLines">1</item>
+        <item name="singleLine">true</item>
+    </style>
+
+    <style name="Widget.StarkCalendar" parent="">
+        <item name="scv_leftChevron">@drawable/ic_chevron_left</item>
+        <item name="scv_rightChevron">@drawable/ic_chevron_right</item>
+        <item name="scv_weekLabels">@array/week_day_labels</item>
+        <item name="scv_monthLabels">@array/month_labels</item>
+        <item name="scv_selectedBackground">@drawable/cal_day_bg_single</item>
+        <item name="scv_selectedTextColor">?android:textColorPrimary</item>
+        <item name="scv_middleBackgroundColor">@color/cal_day_middle</item>
+        <item name="scv_middleTextColor">?android:textColorPrimary</item>
+        <item name="scv_todayBackground">@drawable/cal_day_bg_today</item>
+        <item name="scv_todayTextColor">?android:textColorPrimary</item>
+        <item name="scv_monthDayColor">?android:textColorPrimary</item>
+        <item name="scv_outMonthDayColor">?android:textColorSecondary</item>
+        <item name="scv_cell_height">0dp</item>
+    </style>
+
+    <style name="Widget.StarkDatePicker" parent="@android:style/Widget.Material">
+        <item name="android:textColor">?android:textColorPrimary</item>
+        <item name="dividerHeight">2dp</item>
+        <item name="dividerColor">?attr/colorPrimary</item>
+        <item name="monthLabels">@array/month_labels_short</item>
+    </style>
+
+    <style name="SheetStyle" parent="">
+        <item name="android:colorBackground">?attr/colorSurface</item>
+        <item name="android:elevation">0dp</item>
+        <item name="bs_cornerFamily">rounded</item>
+        <item name="bs_cornerRadius">20dp</item>
+    </style>
+
+</resources>

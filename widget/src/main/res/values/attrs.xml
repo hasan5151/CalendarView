@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="Theme">
+        <attr name="starkCalendarStyle" format="reference" />
+        <attr name="starkDatePickerStyle" format="reference" />
+        <attr name="sheetStyle" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="StarkCalendarView">
+        <attr name="scv_leftChevron" format="reference" />
+        <attr name="scv_rightChevron" format="reference" />
+        <attr name="scv_weekLabels" format="reference" />
+        <attr name="scv_monthLabels" format="reference" />
+        <attr name="scv_selectedBackground" format="reference" />
+        <attr name="scv_selectedTextColor" format="color" />
+        <attr name="scv_todayBackground" format="reference" />
+        <attr name="scv_todayTextColor" format="color" />
+        <attr name="scv_middleBackgroundColor" format="color" />
+        <attr name="scv_middleTextColor" format="color" />
+        <attr name="scv_monthDayColor" format="color" />
+        <attr name="scv_outMonthDayColor" format="color" />
+        <attr name="scv_cell_height" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="StarkDatePickerView">
+        <attr name="android:textColor" />
+        <attr name="dividerHeight" format="dimension" />
+        <attr name="dividerColor" format="color" />
+        <attr name="monthLabels" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="SheetFragment">
+        <attr name="android:colorBackground" format="color" />
+        <attr name="android:elevation" format="dimension" />
+        <attr name="bs_cornerRadius" format="dimension" />
+        <attr name="bs_cornerFamily" format="enum">
+            <enum name="none" value="-1" />
+            <enum name="rounded" value="0" />
+            <enum name="cut" value="1" />
+        </attr>
+    </declare-styleable>
+
+</resources>

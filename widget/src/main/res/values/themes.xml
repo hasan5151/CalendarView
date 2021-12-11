@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Widget.Theme" parent="Base.AppTheme"/>
+
+    <style name="SheetTheme" parent="ThemeOverlay.MaterialComponents.BottomSheetDialog">
+       <!-- <item name="android:background">@android:color/transparent</item>-->
+        <item name="android:backgroundTint">@android:color/transparent</item>
+        <!--<item name="android:windowBackground">@android:color/transparent</item>-->
+       <!-- <item name="android:colorBackground">@android:color/transparent</item>-->
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:backgroundDimAmount">0.5</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:windowTranslucentNavigation">false</item>
+        <item name="android:windowTranslucentStatus">false</item>
+        <item name="android:windowIsFloating">false</item>
+        <!--<item name="android:windowSoftInputMode">adjustResize</item>-->
+        <!--
+        <item name="android:colorPrimary">?attr/colorPrimary</item>
+        <item name="android:colorPrimaryDark">?attr/colorPrimary</item>
+        <item name="android:colorAccent">?attr/colorPrimary</item>-->
+        <!--<item name="android:navigationBarColor">?attr/sheetBackgroundColor</item>-->
+    </style>
+
+</resources>

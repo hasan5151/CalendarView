@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="period_today">Бүгүн</string>
+    <string name="period_this_month">Үстүбүздөгү айда</string>
+    <string name="period_7_days">Акыркы 7 күн</string>
+    <string name="period_30_days">Акыркы 30 күн</string>
+    <string name="period_range">Мөөнөттү тандаңыз</string>
+    <string name="show">Көрсөтүү</string>
+    <string name="select_date">Датаны тандоо</string>
+
+    <string name="wd_mon">Дш</string>
+    <string name="wd_tue">Шш</string>
+    <string name="wd_wed">Шр</string>
+    <string name="wd_thu">Бш</string>
+    <string name="wd_fri">Жм</string>
+    <string name="wd_sat">Иш</string>
+    <string name="wd_sun">Жш</string>
+
+    <string name="mth_jan">Январь</string>
+    <string name="mth_feb">Февраль</string>
+    <string name="mth_mar">Март</string>
+    <string name="mth_apr">Апрель</string>
+    <string name="mth_may">Май</string>
+    <string name="mth_jun">Июнь</string>
+    <string name="mth_jul">Июль</string>
+    <string name="mth_aug">Август</string>
+    <string name="mth_sep">Сентябрь</string>
+    <string name="mth_oct">Октябрь</string>
+    <string name="mth_nov">Ноябрь</string>
+    <string name="mth_dec">Декабрь</string>
+
+    <string name="mth_jan_short">Янв</string>
+    <string name="mth_feb_short">Фев</string>
+    <string name="mth_mar_short">Мар</string>
+    <string name="mth_apr_short">Апр</string>
+    <string name="mth_may_short">Май</string>
+    <string name="mth_jun_short">Июн</string>
+    <string name="mth_jul_short">Июл</string>
+    <string name="mth_aug_short">Авг</string>
+    <string name="mth_sep_short">Сен</string>
+    <string name="mth_oct_short">Окт</string>
+    <string name="mth_nov_short">Ноя</string>
+    <string name="mth_dec_short">Дек</string>
+
+</resources>

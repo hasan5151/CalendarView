@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="week_day_labels">
+        <item>@string/wd_mon</item>
+        <item>@string/wd_tue</item>
+        <item>@string/wd_wed</item>
+        <item>@string/wd_thu</item>
+        <item>@string/wd_fri</item>
+        <item>@string/wd_sat</item>
+        <item>@string/wd_sun</item>
+    </string-array>
+
+    <string-array name="month_labels">
+        <item>@string/mth_jan</item>
+        <item>@string/mth_feb</item>
+        <item>@string/mth_mar</item>
+        <item>@string/mth_apr</item>
+        <item>@string/mth_may</item>
+        <item>@string/mth_jun</item>
+        <item>@string/mth_jul</item>
+        <item>@string/mth_aug</item>
+        <item>@string/mth_sep</item>
+        <item>@string/mth_oct</item>
+        <item>@string/mth_nov</item>
+        <item>@string/mth_dec</item>
+    </string-array>
+
+    <string-array name="month_labels_short">
+        <item>@string/mth_jan_short</item>
+        <item>@string/mth_feb_short</item>
+        <item>@string/mth_mar_short</item>
+        <item>@string/mth_apr_short</item>
+        <item>@string/mth_may_short</item>
+        <item>@string/mth_jun_short</item>
+        <item>@string/mth_jul_short</item>
+        <item>@string/mth_aug_short</item>
+        <item>@string/mth_sep_short</item>
+        <item>@string/mth_oct_short</item>
+        <item>@string/mth_nov_short</item>
+        <item>@string/mth_dec_short</item>
+    </string-array>
+
+</resources>

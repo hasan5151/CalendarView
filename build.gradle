@@ -1,0 +1,116 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+buildscript {
+    ext {
+        compileSdkVersion = 30
+        minSdkVersion = 21
+        targetSdkVersion = 30
+        buildToolsVersion = "30.0.3"
+        navigationVersion= "2.3.4"
+        gradleVersion = '7.0.3'
+        kotlinVersion = '1.6.0'
+
+        appCompatVersion = '1.3.1'
+        constraintLayoutVersion = '2.1.2'
+        ktxVersion = '1.6.0'
+        activityKtx = '1.3.1'
+        materialVersion = '1.4.0'
+        lifecycleKtxVersion = '2.3.1'
+        lifecycleExtensionKtxVersion = '2.2.0'
+        navigationVersion = '2.3.5'
+
+        retrofitVersion = '2.9.0'
+        moshiVersion = '1.13.0'
+
+        koinVersion = '2.1.6'
+        coroutinesVersion = "1.3.2"
+
+        googleServices = '4.3.8'
+        playCoreVer = '1.9.1'
+        playcoreKtx = '1.8.1'
+
+        lottieVer = '3.6.1'
+        colorWheelVersion = '1.1.1'
+
+        roomVersion = '2.3.0'
+        glideVersion = '4.12.0'
+
+        cameraXversion = '1.0.0'
+        desugarVer = '1.1.5'
+        coroutineVer = '1.5.2'
+        calendarViewVer = '1.0.1'
+////////////////////////////
+        kotlinVer = '1.5.31'
+        coroutineVer = '1.3.2'
+        desugarVer = '1.1.5'
+
+        //AndroidX
+        appCompatVer = '1.3.1'
+        ktxVersion = '1.6.0'
+        activityKtx = '1.3.1'
+        fragmentKtx = '1.3.6'
+        constraintLayoutVer = '2.1.2'
+        recyclerViewVer = '1.2.1'
+        recyclerSelectionVer = '1.1.0'
+
+        //Material
+        materialVer = '1.4.0'
+
+        //Arch Components
+        navigationVer = '2.3.5'
+        lifecycleKtxVer = '2.3.1'
+
+        //Network
+        okHttpVer = '4.9.2'
+        retrofitVer = '2.9.0'
+        moshiVer = '1.13.0'
+        httpprofiler = '1.0.8'
+        glideVer = '4.12.0'
+        pagingVersion = '3.1.0'
+        //Room
+        roomVer = '2.4.0-beta02'
+        //Dependency Injection
+        koinVer = '3.1.3'
+        //CameraX
+        cameraXversion = '1.0.2'
+        //Google & Firebase
+        firebaseAnalytics = '20.0.0'
+        firebaseCrashlytics = '18.2.4'
+        playCoreVer = '1.10.2'
+        //Security
+        biometricVer = '1.1.0'
+        preferenceVer = '1.1.1'
+        //Extra
+        lottieVer = '4.2.1'
+        circleImageVer = '3.1.0'
+        maskedEditTextVer = '1.0.0'
+        calendarViewVer = '1.0.1'
+    }
+    repositories {
+        google()
+        jcenter()
+        maven { url "https://jitpack.io" }
+
+    }
+    dependencies {
+        classpath "com.android.tools.build:gradle:7.0.3"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.6.0"
+        classpath "org.koin:koin-gradle-plugin:$koinVersion"
+        classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$navigationVersion"
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+        maven { url "https://jitpack.io" }
+    }
+}
+
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

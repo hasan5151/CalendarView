@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="bottom">
+
+    <View
+        android:id="@+id/period_drag"
+        style="@style/BottomSheetDrag"
+        android:layout_marginTop="@dimen/margin_normal"
+        android:layout_marginBottom="@dimen/margin_small"
+        app:layout_constraintBottom_toTopOf="@+id/period_barrier"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/period_barrier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="top"
+        app:constraint_referenced_ids="period_group,calendar_con" />
+
+    <RadioGroup
+        android:id="@+id/period_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/margin_normal"
+        android:paddingStart="@dimen/spacing_normal"
+        android:paddingEnd="@dimen/spacing_normal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:ignore="RtlSymmetry, UnusedAttribute">
+
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:id="@+id/period_today"
+            style="@style/PeriodRadioButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/period_today" />
+
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:id="@+id/period_this_month"
+            style="@style/PeriodRadioButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/period_this_month" />
+
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:id="@+id/period_7_days"
+            style="@style/PeriodRadioButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/period_7_days" />
+
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:id="@+id/period_30_days"
+            style="@style/PeriodRadioButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/period_30_days" />
+
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:id="@+id/period_range"
+            style="@style/PeriodRadioButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/period_range" />
+    </RadioGroup>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/calendar_con"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/calendar_control"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_normal"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="UnusedAttribute">
+
+            <ImageView
+                android:id="@+id/calendar_prev"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_marginStart="@dimen/margin_small"
+                android:adjustViewBounds="true"
+                android:foreground="@drawable/fg_ripple_circle"
+                android:padding="@dimen/spacing_small"
+                android:src="@drawable/ic_chevron_left"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/calendar_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_size_h3"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Январь 2021" />
+
+            <ImageView
+                android:id="@+id/calendar_next"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_marginEnd="@dimen/margin_small"
+                android:adjustViewBounds="true"
+                android:foreground="@drawable/fg_ripple_circle"
+                android:padding="@dimen/spacing_small"
+                android:src="@drawable/ic_chevron_right"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/calendar_week_day"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_normal"
+            app:layout_constraintTop_toBottomOf="@+id/calendar_control">
+
+            <TextView
+                android:id="@+id/dow_mon"
+                style="@style/Calendar.WeekDay"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/wd_mon"
+                app:layout_constraintEnd_toStartOf="@+id/dow_tue"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/dow_tue"
+                style="@style/Calendar.WeekDay"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/wd_tue"
+                app:layout_constraintEnd_toStartOf="@+id/dow_wed"
+                app:layout_constraintStart_toEndOf="@+id/dow_mon"
+                app:layout_constraintTop_toTopOf="@+id/dow_mon" />
+
+            <TextView
+                android:id="@+id/dow_wed"
+                style="@style/Calendar.WeekDay"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/wd_wed"
+                app:layout_constraintEnd_toStartOf="@+id/dow_thu"
+                app:layout_constraintStart_toEndOf="@+id/dow_tue"
+                app:layout_constraintTop_toTopOf="@+id/dow_tue" />
+
+            <TextView
+                android:id="@+id/dow_thu"
+                style="@style/Calendar.WeekDay"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/wd_thu"
+                app:layout_constraintEnd_toStartOf="@+id/dow_fri"
+                app:layout_constraintStart_toEndOf="@+id/dow_wed"
+                app:layout_constraintTop_toTopOf="@+id/dow_wed" />
+
+            <TextView
+                android:id="@+id/dow_fri"
+                style="@style/Calendar.WeekDay"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/wd_fri"
+                app:layout_constraintEnd_toStartOf="@+id/dow_sat"
+                app:layout_constraintStart_toEndOf="@+id/dow_thu"
+                app:layout_constraintTop_toTopOf="@+id/dow_thu" />
+
+            <TextView
+                android:id="@+id/dow_sat"
+                style="@style/Calendar.WeekDay"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/wd_sat"
+                app:layout_constraintEnd_toStartOf="@+id/dow_sun"
+                app:layout_constraintStart_toEndOf="@+id/dow_fri"
+                app:layout_constraintTop_toTopOf="@+id/dow_fri" />
+
+            <TextView
+                android:id="@+id/dow_sun"
+                style="@style/Calendar.WeekDay"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/wd_sun"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/dow_sat"
+                app:layout_constraintTop_toTopOf="@+id/dow_sat" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.kizitonwose.calendarview.CalendarView
+            android:id="@+id/calendar_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_small"
+            android:layout_marginBottom="@dimen/margin_normal"
+            app:cv_dayViewResource="@layout/item_calendar_day"
+            app:cv_inDateStyle="allMonths"
+            app:cv_orientation="horizontal"
+            app:cv_outDateStyle="endOfGrid"
+            app:cv_scrollMode="paged"
+            app:layout_constraintBottom_toTopOf="@+id/calendar_confirm"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/calendar_week_day" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/calendar_confirm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_normal"
+            android:text="@string/show"
+            android:enabled="false"
+            tools:enabled="true"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="cell_height">36dp</dimen>
+    <dimen name="scv_cell_inner_margin">2dp</dimen>
+
+    <dimen name="scv_left_chevron_margin">8dp</dimen>
+    <dimen name="scv_right_chevron_margin">8dp</dimen>
+</resources>
