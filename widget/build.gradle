@@ -42,7 +42,6 @@ android {
 }
 
 dependencies {
-
     implementation project(path: ':shared')
     coreLibraryDesugaring "com.android.tools:desugar_jdk_libs:$rootProject.desugarVer"
     implementation "androidx.core:core-ktx:$rootProject.ktxVersion"
@@ -54,19 +53,4 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-common-java8:$rootProject.lifecycleKtxVer"
 
     implementation "com.github.kizitonwose:CalendarView:$rootProject.calendarViewVer"
-
-}
-
-afterEvaluate {
-    publishing {
-        publications {
-            // Creates a Maven publication called "release".
-            release(MavenPublication) {
-                from components.release
-                groupId = 'com.github.jitpack'
-                artifactId = 'android-example'
-                version = '1.0.2'
-            }
-        }
-    }
 }
