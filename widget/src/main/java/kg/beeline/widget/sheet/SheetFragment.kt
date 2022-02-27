@@ -1,5 +1,6 @@
 package kg.beeline.widget.sheet
 
+import android.annotation.SuppressLint
 import android.app.Dialog
 import android.content.res.ColorStateList
 import android.graphics.Color
@@ -147,6 +148,7 @@ abstract class SheetFragment<VB : ViewBinding> : DialogFragment() {
         return BottomSheetDialog(requireContext(), theme)
     }
 
+    @SuppressLint("RestrictedApi")
     override fun setupDialog(dialog: Dialog, style: Int) {
         val acd = dialog as AppCompatDialog
         when (style) {

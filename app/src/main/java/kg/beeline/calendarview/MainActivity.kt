@@ -12,7 +12,6 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-/*
         val picker = datePicker {
             this.titleRes = R.string.app_name
             this.maxYear = LocalDate.now().minusYears(14).year
@@ -22,6 +21,6 @@ class MainActivity : AppCompatActivity() {
                 Log.d("bur","selected birthday ${it}")
             }
         }
-        picker.show(supportFragmentManager, "history_range_picker")*/
+        picker.show(supportFragmentManager, "history_range_picker")
     }
 }
