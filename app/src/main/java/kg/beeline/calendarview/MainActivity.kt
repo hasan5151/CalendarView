@@ -4,8 +4,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import kg.beeline.widget.datepicker.datePicker
-import kg.beeline.widget.period.periodPicker
-import kotlinx.android.synthetic.main.activity_main.*
 import java.time.LocalDate
 
 class MainActivity : AppCompatActivity() {
