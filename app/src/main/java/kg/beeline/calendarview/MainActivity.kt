@@ -12,9 +12,11 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         val picker = datePicker {
             this.titleRes = R.string.app_name
-            this.maxYear = LocalDate.now().plusYears(14).year
-            this.minYear = 2000
+            this.maxYear = LocalDate.now().year
+            this.minYear = 2020
             this.openAt = LocalDate.now()
+            this.isTodayMaxDate = true
+//            this.isTodayMinDate = true
             this.onDateSelected = {
                 Log.d("onDateSelected","selected birthday ${it}")
             }

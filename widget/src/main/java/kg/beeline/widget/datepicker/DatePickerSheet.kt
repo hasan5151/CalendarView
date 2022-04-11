@@ -23,6 +23,10 @@ class DatePickerSheet : SheetFragment<SheetDatePickerBinding>() {
     /**Set title string res*/
     var titleRes:Int? = null
 
+    var isTodayMaxDate : Boolean? = false
+//    var isTodayMinDate : Boolean? = false
+
+
     override fun createSheet(inflater: LayoutInflater): SheetDatePickerBinding {
         return SheetDatePickerBinding.inflate(inflater)
     }
@@ -43,6 +47,8 @@ class DatePickerSheet : SheetFragment<SheetDatePickerBinding>() {
         maxYear?.let { datePicker.maxYear = it }
         minYear?.let { datePicker.minYear = it }
         titleRes?.let { title.setText(it) }
+        isTodayMaxDate?.let { datePicker.isTodayMaxDate= it }
+//        isTodayMinDate?.let { datePicker.isTodayMinDate = it }
         datePicker.setupPicker()
     }
 }

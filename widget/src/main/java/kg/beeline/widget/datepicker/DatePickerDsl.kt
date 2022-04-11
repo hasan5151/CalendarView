@@ -23,6 +23,9 @@ class DatePickerDsl internal constructor() {
     @StringRes
     var titleRes:Int? = null
 
+    var isTodayMaxDate : Boolean? = null
+//    var isTodayMinDate : Boolean? = null
+
     var onDateChange: ((localDate: LocalDate) -> Unit)? = null
     var onDateSelected: ((localDate: LocalDate) -> Unit)? = null
 
@@ -39,6 +42,8 @@ class DatePickerDsl internal constructor() {
         minYear?.let { picker.minYear = it }
         maxYear?.let { picker.maxYear = it }
         titleRes?.let { picker.titleRes = it }
+        isTodayMaxDate?.let { picker.isTodayMaxDate = it }
+//        isTodayMinDate?.let { picker.isTodayMinDate = it }
     }
 }
 

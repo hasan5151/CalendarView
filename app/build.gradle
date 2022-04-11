@@ -5,12 +5,12 @@ apply plugin: 'kotlin-kapt'
 apply plugin: "androidx.navigation.safeargs.kotlin"
 
 android {
-    compileSdk 31
+    compileSdk rootProject.compileSdkVersion
 
     defaultConfig {
         applicationId "kg.beeline.calendarview"
-        minSdk 21
-        targetSdk 31
+        minSdk rootProject.minSdkVersion
+        targetSdk rootProject.compileSdkVersion
         versionCode 1
         versionName "1.0"
 
@@ -54,11 +54,9 @@ dependencies {
 
     implementation "androidx.core:core-ktx:$rootProject.ktxVersion"
     implementation "androidx.appcompat:appcompat:$rootProject.appCompatVersion"
-    implementation 'com.google.android.material:material:1.5.0'
+    implementation "com.google.android.material:material:$rootProject.materialVer"
     implementation "androidx.constraintlayout:constraintlayout:$rootProject.constraintLayoutVersion"
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
-//    implementation "com.github.kizitonwose:CalendarView:$rootProject.calendarViewVer"
-
 }

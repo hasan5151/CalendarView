@@ -18,8 +18,6 @@ import kg.beeline.widget.view.NumberPicker.OnScrollListener.SCROLL_STATE_IDLE
 import java.time.LocalDate
 import java.time.ZoneOffset
 
-
-/** Created by Jahongir on 13/02/2021.*/
 class StarkDatePickerView : FrameLayout {
 
     constructor(context: Context) :
@@ -53,11 +51,22 @@ class StarkDatePickerView : FrameLayout {
     var selectedDate = LocalDate.now()
     var minYear = LocalDate.now().minusYears(70).year
     var maxYear = LocalDate.now().year
+    val today = LocalDate.now()
+
+    var isTodayMaxDate: Boolean? = null
+
+    var isTodayMinDate: Boolean? = null
+
 
     private val mediaPlayer: MediaPlayer by lazy { createMediaPlayer() }
 
     private fun init(set: AttributeSet?, defStyleAttr: Int, defStyleRes: Int) {
-        context.withStyledAttributes(set, R.styleable.StarkDatePickerView, defStyleAttr, defStyleRes) {
+        context.withStyledAttributes(
+            set,
+            R.styleable.StarkDatePickerView,
+            defStyleAttr,
+            defStyleRes
+        ) {
             if (textColor == -1) {
                 textColor = getColorOrThrow(R.styleable.StarkDatePickerView_android_textColor)
             }
@@ -80,6 +89,9 @@ class StarkDatePickerView : FrameLayout {
         Log.d("StarkDatePicker","setupPicker")
         checkDates()
         setupDateRange()
+
+        invalidateDayRange()
+        invalidateMonthRange()
     }
 
     private fun setupView() {
@@ -88,6 +100,7 @@ class StarkDatePickerView : FrameLayout {
         setupDayPicker()
         setupMonthPicker()
         setupYearPicker()
+
     }
 
     private fun setupDayPicker() = with(binding) {
@@ -106,7 +119,7 @@ class StarkDatePickerView : FrameLayout {
             wrapSelectorWheel = false
         }
         pickerMonth.apply {
-            minValue = 1
+            minValue = 12
             maxValue = 12
             displayedValues = monthLabels.toTypedArray()
             value = selectedDate.monthValue
@@ -124,6 +137,7 @@ class StarkDatePickerView : FrameLayout {
         pickerMonth.setOnValueChangedListener { _, _, newVal ->
             selectedDate = selectedDate.withMonth(newVal)
             invalidateDayRange()
+            invalidateMonthRange()
             vibrateShot()
         }
         setupPickers(pickerMonth)
@@ -133,6 +147,7 @@ class StarkDatePickerView : FrameLayout {
         pickerYear.setOnValueChangedListener { _, _, newVal ->
             selectedDate = selectedDate.withYear(newVal)
             invalidateDayRange()
+            invalidateMonthRange()
             vibrateShot()
         }
         setupPickers(pickerYear)
@@ -157,7 +172,43 @@ class StarkDatePickerView : FrameLayout {
         with(binding.pickerDay) {
             maxValue = selectedDate.lengthOfMonth()
             wrapSelectorWheel = false
+
+            if (isTodayMaxDate == true && selectedDate.year == today.year && selectedDate.monthValue == today.monthValue) {
+                maxValue = today.dayOfMonth
+                wrapSelectorWheel = true
+            }
+
+         /*   if (isTodayMinDate == true && selectedDate.year == today.year  && selectedDate.monthValue == today.monthValue) {
+                minValue = today.dayOfMonth
+                wrapSelectorWheel = true
+            }*/
         }
+    }
+
+    private fun invalidateMonthRange() {
+        //Reset Max Month
+        with(binding.pickerMonth) {
+            maxValue = 12
+            wrapSelectorWheel = false
+            Log.d("StarkDatePicker", "todays year ${today.year}")
+            Log.d("StarkDatePicker", "selectedDate year ${selectedDate.year}")
+
+            if (isTodayMaxDate == true && selectedDate.year == today.year) {
+                maxValue = today.monthValue
+                wrapSelectorWheel = false
+            }
+
+          /*  if (isTodayMinDate == true && selectedDate.year == today.year ) {
+                Log.d("StarkDatePicker", "selectedDate min ${today.monthValue}")
+                minValue = 12
+//                value=12
+                maxValue =12
+                wrapSelectorWheel = false
+            }*/
+        }
+
+        Log.d("StarkDatePicker", "selectedDate pickerMonth ${binding.pickerMonth.minValue}")
+
     }
 
     private fun checkDates() {
