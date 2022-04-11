@@ -77,11 +77,13 @@ class StarkDatePickerView : FrameLayout {
 
     /**Call this method if you changed picker configuration*/
     fun setupPicker() {
+        Log.d("StarkDatePicker","setupPicker")
         checkDates()
         setupDateRange()
     }
 
     private fun setupView() {
+        Log.d("StarkDatePicker","setupView")
         setupDateRange()
         setupDayPicker()
         setupMonthPicker()

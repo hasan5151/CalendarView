@@ -12,11 +12,11 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         val picker = datePicker {
             this.titleRes = R.string.app_name
-            this.maxYear = LocalDate.now().minusYears(14).year
-            this.minYear = 1940
+            this.maxYear = LocalDate.now().plusYears(14).year
+            this.minYear = 2000
             this.openAt = LocalDate.now()
             this.onDateSelected = {
-                Log.d("bur","selected birthday ${it}")
+                Log.d("onDateSelected","selected birthday ${it}")
             }
         }
         picker.show(supportFragmentManager, "history_range_picker")
