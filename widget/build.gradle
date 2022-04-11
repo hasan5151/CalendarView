@@ -3,8 +3,8 @@ plugins {
     id 'kotlin-android'
     id 'maven-publish'
 }
-/*group='kg.beeline.calendarView'
-version = '1.0.9'*/
+group='kg.beeline.calendarView'
+version = '1.0.11'
 
 
 android {
@@ -58,7 +58,7 @@ dependencies {
     implementation "com.github.kizitonwose:CalendarView:$rootProject.calendarViewVer"
 }
 
-/*afterEvaluate {
+afterEvaluate {
     publishing {
         publications {
             // Creates a Maven publication called "release".
@@ -66,9 +66,9 @@ dependencies {
                 from components.release
                 groupId = 'kg.beeline'
                 artifactId = 'calendarView'
-                version = '1.0.9'
+                version = '1.0.11'
 
             }
         }
     }
-}*/
+}
