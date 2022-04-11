@@ -119,7 +119,7 @@ class StarkDatePickerView : FrameLayout {
             wrapSelectorWheel = false
         }
         pickerMonth.apply {
-            minValue = 12
+            minValue = 1
             maxValue = 12
             displayedValues = monthLabels.toTypedArray()
             value = selectedDate.monthValue

@@ -25,7 +25,6 @@ import android.graphics.Paint;
 import android.graphics.Paint.Align;
 import android.text.TextUtils;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.util.SparseArray;
 import android.util.TypedValue;
 import android.view.Gravity;
@@ -892,8 +891,6 @@ public class NumberPicker extends LinearLayout {
         if (scrollState == OnScrollListener.SCROLL_STATE_IDLE) {
             AccessibilityManager am = (AccessibilityManager) getContext().getSystemService(Context.ACCESSIBILITY_SERVICE);
             if (am.isTouchExplorationEnabled()) {
-                Log.d("onScrollStateChange","mValue"+ mValue);
-                Log.d("onScrollStateChange","mMinValue"+ mMinValue);
                 String text = (mDisplayedValues == null) ? formatNumber(mValue) : mDisplayedValues[mValue - mMinValue];
                 AccessibilityEvent event = AccessibilityEvent.obtain();
                 event.setEventType(AccessibilityEvent.TYPE_ANNOUNCEMENT);
@@ -970,10 +967,6 @@ public class NumberPicker extends LinearLayout {
     private boolean updateInputTextView() {
         String text = (mDisplayedValues == null) ? formatNumber(mValue) : mDisplayedValues[mValue - mMinValue];
         if (!TextUtils.isEmpty(text) && !text.equals(mInputText.getText().toString())) {
-
-            Log.d("updateInputTextView","mDisplayedValues"+ text);
-
-
             mInputText.setText(text);
             return true;
         }
