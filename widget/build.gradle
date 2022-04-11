@@ -4,7 +4,7 @@ plugins {
     id 'maven-publish'
 }
 group='kg.beeline.calendarView'
-version = '1.0.4'
+version = '1.0.5'
 
 
 android {
@@ -65,7 +65,8 @@ afterEvaluate {
                 from components.release
                 groupId = 'kg.beeline'
                 artifactId = 'calendarView'
-                version = '1.0.4'
+                version = '1.0.5'
+
             }
         }
     }
