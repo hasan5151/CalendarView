@@ -3,7 +3,7 @@ plugins {
     id 'kotlin-android'
     id 'maven-publish'
 }
-group='kg.beeline.calendarView'
+group='io.github.hasan5151'
 version = '1.0.11'
 
 
@@ -64,7 +64,7 @@ afterEvaluate {
             // Creates a Maven publication called "release".
             release(MavenPublication) {
                 from components.release
-                groupId = 'kg.beeline'
+                groupId = 'io.github.hasan5151'
                 artifactId = 'calendarView'
                 version = '1.0.11'
 
