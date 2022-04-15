@@ -169,7 +169,7 @@ public class NumberPicker extends LinearLayout {
         mInputText.setSingleLine(true);
         mInputText.setTextColor(Color.BLACK);
         mInputText.setBackgroundResource(0);
-        mInputText.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 18);
+        mInputText.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 24);
         mInputText.setVisibility(INVISIBLE);
         addView(mInputText, new LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
 

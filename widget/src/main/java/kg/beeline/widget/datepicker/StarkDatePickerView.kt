@@ -90,8 +90,8 @@ class StarkDatePickerView : FrameLayout {
         checkDates()
         setupDateRange()
 
-        invalidateDayRange()
         invalidateMonthRange()
+        invalidateDayRange()
     }
 
     private fun setupView() {
@@ -136,8 +136,8 @@ class StarkDatePickerView : FrameLayout {
     private fun setupMonthPicker() = with(binding) {
         pickerMonth.setOnValueChangedListener { _, _, newVal ->
             selectedDate = selectedDate.withMonth(newVal)
+           // invalidateMonthRange()
             invalidateDayRange()
-            invalidateMonthRange()
             vibrateShot()
         }
         setupPickers(pickerMonth)
@@ -146,8 +146,8 @@ class StarkDatePickerView : FrameLayout {
     private fun setupYearPicker() = with(binding) {
         pickerYear.setOnValueChangedListener { _, _, newVal ->
             selectedDate = selectedDate.withYear(newVal)
-            invalidateDayRange()
             invalidateMonthRange()
+            invalidateDayRange()
             vibrateShot()
         }
         setupPickers(pickerYear)
@@ -175,7 +175,13 @@ class StarkDatePickerView : FrameLayout {
 
             if (isTodayMaxDate == true && selectedDate.year == today.year && selectedDate.monthValue == today.monthValue) {
                 maxValue = today.dayOfMonth
-                wrapSelectorWheel = true
+//                value = today.dayOfMonth
+                if (value>=today.dayOfMonth) {
+                    selectedDate = selectedDate.withDayOfMonth(today.dayOfMonth)
+                    value = today.dayOfMonth
+
+                }
+                wrapSelectorWheel = false
             }
 
          /*   if (isTodayMinDate == true && selectedDate.year == today.year  && selectedDate.monthValue == today.monthValue) {
@@ -190,21 +196,19 @@ class StarkDatePickerView : FrameLayout {
         with(binding.pickerMonth) {
             maxValue = 12
             wrapSelectorWheel = false
-            Log.d("StarkDatePicker", "todays year ${today.year}")
-            Log.d("StarkDatePicker", "selectedDate year ${selectedDate.year}")
+            Log.d("StarkDatePicker", "invalidateMonthRange todays value ${value}")
+            Log.d("StarkDatePicker", "invalidateMonthRange todays monthValue ${today.monthValue}")
+            Log.d("StarkDatePicker", "invalidateMonthRange selectedDate year ${selectedDate.year}")
+            Log.d("StarkDatePicker", "invalidateMonthRange today year ${today.year}")
 
             if (isTodayMaxDate == true && selectedDate.year == today.year) {
                 maxValue = today.monthValue
+                if (value>=today.monthValue) {
+                    selectedDate = selectedDate.withMonth(today.monthValue)
+                    value = today.monthValue
+                }
                 wrapSelectorWheel = false
             }
-
-          /*  if (isTodayMinDate == true && selectedDate.year == today.year ) {
-                Log.d("StarkDatePicker", "selectedDate min ${today.monthValue}")
-                minValue = 12
-//                value=12
-                maxValue =12
-                wrapSelectorWheel = false
-            }*/
         }
 
         Log.d("StarkDatePicker", "selectedDate pickerMonth ${binding.pickerMonth.minValue}")

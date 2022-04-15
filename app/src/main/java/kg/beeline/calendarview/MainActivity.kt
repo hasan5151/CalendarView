@@ -18,7 +18,7 @@ class MainActivity : AppCompatActivity() {
             this.isTodayMaxDate = true
 //            this.isTodayMinDate = true
             this.onDateSelected = {
-                Log.d("onDateSelected","selected birthday ${it}")
+                Log.d("onDateSelected","invalidateMonthRange selected birthday ${it}")
             }
         }
         picker.show(supportFragmentManager, "history_range_picker")
