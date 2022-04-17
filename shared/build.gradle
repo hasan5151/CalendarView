@@ -7,7 +7,7 @@ plugins {
 }
 
 group='kg.beeline.calendarView'
-version = '1.0.12'
+version = '1.0.14'
 
 
 android {
@@ -86,7 +86,7 @@ publishing {
         maven(MavenPublication) {
             groupId 'io.github.hasan5151'
             //You can either define these here or get them from project conf elsewhere
-            artifactId 'calendarView'
+            artifactId 'shared'
             version '1.0.0'
             artifact "$buildDir/outputs/aar/shared-release.aar" //aar artifact you want to publish
 
